@@ -15,13 +15,13 @@
         
       </div>
     </div>
-    <div class="col-sm-8 col-md-6 col-lg-4 col-lg-offset-2 col-sm-offset-1">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-md-6 col-lg-4 col-lg-offset-2 col-sm-offset-1">
       <div class="show-page-entry">
         <div class="row">
           <div class="col-xs-12">
-            <div class="img-big">
+            <div class="img-big" style="background-image:url(<%= @entry.picture %>)">
               <i class="fa fa-thumbs-<%= @entry.rating? ? 'up' : 'down' %>"></i>
-              <%= image_tag(@entry.picture) %></div>
+              </div>
           </div>
         </div>
         <div class="description-wrapper">

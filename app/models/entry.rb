@@ -1,5 +1,7 @@
 class Entry < ActiveRecord::Base
 
+
+
 # use 'type' column for types of wines
 self.inheritance_column = nil
 

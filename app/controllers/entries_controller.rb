@@ -28,6 +28,6 @@ class EntriesController < ApplicationController
   private
 
     def entry_params
-      params.require(:entry).permit(:wine, :picture, :type, :price, :comments, :rating)
+      params.require(:entry).permit(:wine, :picture, :picture_cache, :type, :price, :comments, :rating)
     end
 end
