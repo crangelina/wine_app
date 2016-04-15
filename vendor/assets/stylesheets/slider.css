@@ -126,7 +126,7 @@ border-top-color: #B5B5B5 !important;
   background-color: #9362BF;
   border-radius: 3px;
   background-image: -moz-linear-gradient(top, #9362BF, #8750b8);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#9362BF, to(#8750b8));
+  background-image: -webkit-gradient(linear, 0 0, 0, 100%, from(#9362BF, to(#8750b8)));
   background-image: -webkit-linear-gradient(top, #9362BF, #8750b8);
   background-image: -o-linear-gradient(top, #9362BF, #8750b8);
   background-image: linear-gradient(to bottom, #9362BF, #8750b8);
