@@ -23,7 +23,8 @@ $(function() {
 
   // SLIDER
   $slider.slider({
-    tooltip: "show"
+    tooltip: "show",
+    handle: "square"
   });
 
   // PICTURE PREVIEW
