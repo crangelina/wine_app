@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wine: MyString
+  picture: MyString
+  rating: false
+  comments: MyText
+
+two:
+  wine: MyString
+  picture: MyString
+  rating: false
+  comments: MyText

@@ -1,0 +1,18 @@
+MODELS
+
+Entry
+  wine:string
+  picture:string (carrierwave)
+  rating:boolean (true = thumbsup / false = thumbsdown)
+  comments:text
+
+------------------------
+NOTES
+
+Type input -- autocomplete?
+Price input -- slider?
+Entry page: Entire entry is clickable >> show page
+Show page: hover over root page
+Search/Entries page: add filter for only thumbs up/down
+
+

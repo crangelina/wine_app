@@ -1,0 +1,49 @@
+<!-- SEARCH FORM -->
+<div class="search-form">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <%= form_tag(entries_path, method: "get") do %>
+        <div class="input-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Search for a wine", class: "form-control input-lg" %>
+          <span class="input-group-btn">
+            <%= button_tag raw('<i class="fa fa-search"></i>'), class: "btn btn-lg" %>
+        <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% if params[:search] %>
+  <% unless @entries.present? %>
+    <div class="poop">
+      <p> There are no entries containing the term "<%= params[:search] %>".</p>
+    </div>
+  <% end %>
+<% end %>
+
+
+<!-- INDEX OF WINES -->
+<div class="container-fluid">
+  <div class="row">
+      <% @entries.each do |entry| %>
+        <div class="col-sm-6 col-md-4"> 
+            <div class="wine-entry">
+              <div class="img"><%= image_tag(entry.picture) %></div>
+              <div class="description-wrapper">
+                <div class="wine-name"> <%= link_to entry.wine, entry_path(entry.id) %> </div>
+                <div class="wine-type"> <%= entry.type %> </div>
+              </div>
+              <div class="rating-wrapper">
+                <div class="wine-rating"> 
+                  <i class="fa fa-thumbs-<%= entry.rating? ? 'up' : 'down' %>"></i>
+                </div>
+              </div>
+            </div>
+        </div>
+      <% end %> 
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<% 
+  prev_entry_id = @entry.id - 1 
+  next_entry_id = @entry.id + 1 
+%>
+
+<div class="container-fluid">
+  <div class="id-helper"><%= @entry.id %></div>
+  <div class="row">
+    <div class="col-sm-1 col-md-offset-1 hidden-xs">
+      <div class="back-button">
+        
+        <% if Entry.find_by_id(prev_entry_id) != nil %>
+          <%= link_to raw('<i class="fa fa-caret-left" aria-hidden="true"></i>'), entry_path(prev_entry_id) %>
+        <% end %>
+        
+      </div>
+    </div>
+    <div class="col-sm-8 col-md-6 col-lg-4 col-lg-offset-2 col-sm-offset-1">
+      <div class="show-page-entry">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="img-big">
+              <i class="fa fa-thumbs-<%= @entry.rating? ? 'up' : 'down' %>"></i>
+              <%= image_tag(@entry.picture) %></div>
+          </div>
+        </div>
+        <div class="description-wrapper">
+          <div class="wine-name"> <%= @entry.wine %> </div>
+          <div class="wine-type"> <%= @entry.type %> <span> | </span> $<%= @entry.price %> </div>
+          <div class="wine-comments"> <%= @entry.comments %> </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1 col-sm-offset-1 col-lg-offset-2 hidden-xs">
+      <div class="next-button">
+        
+        <% if Entry.find_by_id(next_entry_id) != nil %>
+          <%= link_to raw('<i class="fa fa-caret-right" aria-hidden="true"></i>'), entry_path(next_entry_id) %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+      <div class="mobile-buttons">
+        <div class="back-button-mobile">
+          <% if Entry.find_by_id(prev_entry_id) != nil %>
+            <%= link_to raw('<i class="fa fa-arrow-left" aria-hidden="true"></i>'), entry_path(prev_entry_id) %>
+          <% end %>
+        </div>
+        <div class="next-button-mobile">
+          
+          <% if Entry.find_by_id(next_entry_id) != nil %>
+            <%= link_to raw('<i class="fa fa-arrow-right" aria-hidden="true"></i>'), entry_path(next_entry_id) %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

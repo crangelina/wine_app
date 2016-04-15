@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <%= form_for @entry do |f| %>
+    <!-- WINE -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <%= f.text_field :wine, placeholder: "Wine", class: "form-control input-lg" %>
+        </div>
+      </div>
+    </div>
+    <!-- PICTURE -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <button class="upload-wrapper btn btn-lg btn-block">
+          <i class="fa fa-upload" aria-hidden="true"></i>
+          Upload Photo
+          <div class="uploadform-group">
+            <%= f.file_field :picture, class: "upload-field" %>
+            <%= f.hidden_field :picture_cache %>
+          </div>
+        </button>
+        <div class="picture-thumbnail">
+          <img class="preview">
+        </div>
+        <div class="picture-cache">
+          <%= image_tag(@entry.picture) if @entry.picture.present? %>
+        </div>
+      </div>
+    </div>
+    <!-- PRICE -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <%= f.text_field :price, class: "form-control", id: "price-slider", :data => {"slider-max": "50", "slider-value": "10"} %>
+        </div>
+      </div>
+    </div>
+    <!-- TYPE -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <%= f.text_field :type, placeholder: "Type", class: "form-control input-lg" %>
+        </div>
+      </div>
+    </div>
+    <!-- COMMENTS -->
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <%= f.text_area :comments, placeholder: "Comments", class: "form-control input-lg" %>
+        </div>
+      </div>
+    </div>
+    <!-- RATING -->
+    <div class="row">
+      
+        <div class="form-group">
+
+          <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3 text-center">
+            <%= f.radio_button :rating, true %>
+            <%= f.label :rating_true, raw("<i class='fa fa-thumbs-up'></i>") %>
+          </div>
+
+          <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+            <%= f.radio_button :rating, false %>
+            <%= f.label :rating_false, raw("<i class='fa fa-thumbs-down'></i>") %>
+          </div>
+
+        </div>
+   
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <%= f.submit "Submit", class: "submit-button btn btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
