@@ -10,7 +10,11 @@
     </div>
     <!-- PICTURE -->
     <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <% if @entry.picture.present? %>
+        <div class="column1 col-sm-7 col-sm-offset-2 col-md-5 col-md-offset-3">
+      <% else %>
+        <div class="column1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <% end %>
         <button class="upload-wrapper btn btn-lg btn-block">
           <i class="fa fa-upload" aria-hidden="true"></i>
           Upload Photo
@@ -19,6 +23,8 @@
             <%= f.hidden_field :picture_cache %>
           </div>
         </button>
+      </div>
+      <div class="column2">
         <div class="picture-thumbnail">
           <img class="preview">
         </div>
@@ -27,6 +33,9 @@
         </div>
       </div>
     </div>
+    
+       
+
     <!-- PRICE -->
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">

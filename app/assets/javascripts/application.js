@@ -35,6 +35,9 @@ $(function() {
 
       reader.onload = function(e) {
         $(".preview").attr("src", e.target.result);
+        $(".column1").removeClass("col-sm-8 col-md-6 ");
+        $(".column1").addClass("col-sm-7 col-md-5");
+        $(".column2").addClass("col-sm-1");
         $(".picture-cache").hide();
         $(".picture-thumbnail").show();
       }
