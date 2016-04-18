@@ -10,7 +10,7 @@ Entry
 TODO
 
 DONE - fix the price slider on mobile
-fix the nav dropdown on mobile
+DONE - fix the nav dropdown on mobile
 make sure it looks okay on your screen
 DONE - fix the image preview to not be so hideous
 

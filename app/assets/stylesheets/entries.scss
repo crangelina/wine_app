@@ -25,6 +25,9 @@ body {
  //------------    NAV BAR    -------------
 
 .navbar {
+  a {
+    display: inline-block;
+  }
   margin-bottom: 0;
   border: none;
   position: absolute;
@@ -35,17 +38,10 @@ body {
   i {
     color: #fff;
   }
-  li:hover {
-    background-color: $purple-dark;
-  }
-  .navbar-brand:hover {
-    cursor: default;
-  }
   .navbar-header {
     position: absolute;
     left: 50%;
     margin-left: -50px !important;
-    display: block;
   }
 }
 
@@ -56,21 +52,8 @@ body {
   line-height: 23px;
   font-family: 'Lobster Two', cursive; 
  }
-.navbar-default .navbar-nav .open .dropdown-menu {
-   background-color: $purple;
-   a:hover {
-    background-color: $purple-dark;
 
-   }
-}
 
-.navbar-default .navbar-nav .open .dropdown-menu>li>a {
-  color: #fff;
-}
-
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
-  background-color: $purple-dark;
-}
 
 
 //------------    INDEX // SEARCH FORM    --------------
